@@ -1,4 +1,4 @@
-/**
+"""
 給定一個由小至大排序過的陣列 nums，以及一個整數 target，找出此 target 適當的插入點 (index)，使陣列維持由小至大的排序，並返回其 index。
 
 若有多個可能的 index，需 return 最小的 index
@@ -13,7 +13,7 @@ Example 2:
 Input: nums = [1, 3, 3, 3, 3], target = 3
 Output: 1
 Explanation: 3 的插入點為 1 和 3 之間，而此插入點的 index  為 1
-**/
+"""
 
 class Solution:
 
@@ -21,4 +21,8 @@ class Solution:
     # @param target: int
     # @return int
     def searchInsertionPosition(self, nums, target):
+        for index,value in enumerate(nums):
+            if value>target:
+                nums.insert(index,target)
+        return nums
     
